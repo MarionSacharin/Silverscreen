@@ -21,7 +21,8 @@ days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Satur
     document.getElementById('DisplayDate').innerHTML = d.getDate();
     document.getElementById('DisplayMonth').innerHTML = months[d.getMonth()] + ' ' + d.getFullYear();
     DisplayDateAndTime();
-    GetFamilyID()
+    GetReminder();
+    GetMessages();
 }
 
 function GetFamilyID() {
@@ -30,6 +31,7 @@ function GetFamilyID() {
     $.ajax({
         type: "POST",
         url: "http://test.oursilverscreen.co.uk/ClientStuff.aspx/AuthoriseDeviceCode",
+        // url: "../ClientStuff.aspx/AuthoriseDeviceCode",
         data: jsonData,
         contentType: "application/json; charset=utf-8",
         dataType: "json", // dataType is json format
@@ -67,3 +69,61 @@ $("#Button1").on("click", function (e) {
         console.log(response);
     }
 });
+
+function GetReminder() {
+    var jsonData = JSON.stringify({ sDeviceCode: $("#txtDeviceCode").val() });
+    $.ajax({
+        type: "POST",
+         url: "http://test.oursilverscreen.co.uk/ClientStuff.aspx/GetReminders",
+        // url: "../ClientStuff.aspx/GetReminders",
+        data: jsonData,
+        contentType: "application/json; charset=utf-8",
+        dataType: "json", // dataType is json format
+        success: OnSuccess,
+        error: OnErrorCall
+    });
+
+    function OnSuccess(response) {
+      var s = "", obj = jQuery.parseJSON(response.d);
+      obj.forEach(function(thisreminder, index) {
+        s += '<div class="AccDropDown" id="ReminderHeader' + index + '">';
+        s += thisreminder.ReminderHeader + '</div>';
+        s += '<div class="AccBox" id="ReminderText' + index + '">';
+        s += thisreminder.ReminderText + '</div>';
+
+        console.log(thisreminder.ReminderAck);
+
+        if(thisreminder.ReminderAck === "True") {
+          s += '<button type="submit" id="ReminderAck' + index + '">Got it</button>';
+        }
+      });
+      console.log(s);
+      $("#reminders").html(s);
+    }
+
+    function OnErrorCall(response) {
+        console.log(response);
+    }
+};
+
+function GetMessages() {
+
+    var jsonData = JSON.stringify({ sDeviceCode: $("#txtDeviceCode").val() });
+    $.ajax({
+        type: "POST",
+        url: "http://test.oursilverscreen.co.uk/ClientStuff.aspx/GetMessages",
+        // url: "../ClientStuff.aspx/GetMessages",
+        data: jsonData,
+        contentType: "application/json; charset=utf-8",
+        dataType: "json", // dataType is json format
+        success: OnSuccess,
+        error: OnErrorCall
+    });
+
+    function OnSuccess(response) {
+        console.log(response.d)
+    }
+    function OnErrorCall(response) {
+        console.log(response);
+    }
+};

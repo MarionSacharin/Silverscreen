@@ -3,8 +3,8 @@
 <head>
     <title>Our Silverscreen</title>
     <link href="css/APPsilverscreenstyles.css" rel="stylesheet" type="text/css" />
-    <script src="js/jquery-1.9.1.min.js"></script>
-    <script src="js/silverscreenslider.js"></script>
+    <script src="js/jquery-2.2.0.min.js"></script>
+<!--    <script src="js/silverscreenslider.js"></script>-->
     <script src="js/SilverScreen.js"></script>
     <link rel="icon" type="image/png" href="images/favicon.ico" />
     <meta http-equiv="refresh" content="900" />
@@ -14,7 +14,6 @@
 <body onload="Main()">
   
     <input id="txtDeviceCode" type="text" value="bbec1ef0-2079-4bb1-adbc-fd6ddf18863b" />
-    <input id="txtFamilyID" type="text" />
 
     <!--Main Wrapper Start-->
     <div id="OuterWrapper">
@@ -46,26 +45,13 @@
                        <div class="MessageBoxV2">
 
                     <h3>Reminders</h3>
-                    
-                    <div class="AccDropDown">Message from Delilah - <a href="#">tap to read</a></div>
-                    <div class="AccBox">Content for accordion goes in here</div>
-                    <div class="AccDropDown">Message from Delilah - <a href="#">tap to read</a></div>
-
-                    <!--Button here-->
-                    <button type="submit">Got the message</button>
+                    <div id="reminders"></div>
                 </div>
 
 
                 <div class="MessageBoxV2">
-                    <h3>Postcards</h3>
-                    <!--Accordionwrapper style-->
-                    <div class="AccDropDown">Message from Delilah - <a href="#">tap to read</a></div>
-                    <div class="AccBox">Content for accordion goes in here</div>
-
-                    <img src="images/couple.jpg" alt="Photo">Hello Tom,
-                    <br>
-                    Message to go here, message goes here, message goes here, message inserted here, message goes here, message to sit here, message goes here, message goes here, message goes here, message goes in here, message goes here,<br>
-                    xx
+                    <h3>Messages</h3>
+                <div id="messages"></div>
                 </div>
             </div>
 
