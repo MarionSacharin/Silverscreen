@@ -1,5 +1,5 @@
 <widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="uk.co.hillbrent.silverscreen.oursilverscreen" version="1.0.0">
-  <name>OurSilverScreen V1</name>
+  <name>OurSilverScreen V2</name>
   <description>Our Silverscreen App</description>
   <author href="http://www.hillbrent.co.uk" email="enquiries@hillbrent.co.uk">Hillbrent</author>
   <content src="index.html"/>
@@ -75,5 +75,8 @@
   <platform name="ios">
     <allow-intent href="itms:*"/>
     <allow-intent href="itms-apps:*"/>
+  </platform>
+  <platform name="windows">
+    <allow-intent href="market:*"/>
   </platform>
 </widget>

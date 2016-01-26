@@ -5,7 +5,7 @@ body, html {
 	height: 100%;
 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 	font-size: 100%;
-	background-image: url(images/app-BG.jpg);
+	background-image: url(../../images/app-BG.jpg);
 	background-repeat: repeat-x;
 }
 /* LINK STYLES */
@@ -48,7 +48,7 @@ a:active {
 	margin-right: auto;
 	margin-left: auto;
 	border-radius: 9px 9px 0px 0px;
-	background-image: url(images/app-masthead-BG.jpg);
+	background-image: url(../../images/app-masthead-BG.jpg);
 	background-repeat: repeat-x;
 }
 
@@ -162,7 +162,7 @@ a:active {
 	margin-right: 10px;
 	border-radius: 9px;
 	box-shadow: 2px 2px 8px 2px #666;
-	background-image: url(images/date-box-BG.jpg);
+	background-image: url(../../images/date-box-BG.jpg);
 	background-repeat: repeat-x;
 	background-position: left top;
 	text-align: center;
@@ -279,7 +279,7 @@ a:active {
 	max-width: 50%;
 }
 .MessageBox button {
-	background-image: url(images/custom-button-reflection.jpg);
+	background-image: url(../../images/custom-button-reflection.jpg);
 	width: 40%;
 	margin-top: 5px;
 	margin-bottom: 5px;
@@ -450,7 +450,7 @@ input[type="text"] {
 	float: none;
 	margin-right: auto;
 	margin-left: auto;
-	background-image: url(images/orange-stripe.jpg);
+	background-image: url(../../images/orange-stripe.jpg);
 	background-repeat: repeat-x;
 	border-right-style: none;
 	border-left-style: none;
@@ -522,7 +522,7 @@ input[type="text"] {
 
 #InnerWrapper #MessageColOne {
 	float: left;
-	width: 35%;
+	width: 30%;
 }
 
 .MessageBoxV2 {
@@ -596,7 +596,7 @@ input[type="text"] {
 	max-width: 50%;
 }
 .MessageBoxV2 button {
-	background-image: url(images/custom-button-reflection.jpg);
+	background-image: url(../../images/custom-button-reflection.jpg);
 	width: 40%;
 	margin-top: 5px;
 	margin-bottom: 5px;
